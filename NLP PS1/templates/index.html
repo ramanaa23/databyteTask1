@@ -1,0 +1,19 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html> <!-- Declares document type -->
+<html>
+<head>
+    <title>IMDB Review Sentiment</title> <!-- <title> sets the browser tab title to "IMDB Review Sentiment" -->
+</head>
+<body>
+    <h1>Movie Review Sentiment Analysis</h1> <!-- Displays the heading 1 -->
+    <form action="/predict" method="post">   <!-- Starts a form ,  submit data to the Flask route /predict,sends data as POST -->
+        <textarea name="review" rows="10" cols="50" placeholder="Enter your review here"></textarea><br><br> <!-- adds textbox with rows ,columns , and line breaks  -->
+        <input type="submit" value="Analyze Sentiment"> <!-- adds submit button  -->
+    </form> <!-- ends the form -->
+
+    {% if prediction %} <!-- Displays prediction result -->
+        <h2>Sentiment: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html> <!-- Ends body and html sections -->
